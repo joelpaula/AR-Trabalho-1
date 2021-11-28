@@ -1,4 +1,4 @@
-# AR-Trabalho-1
+# Network analysis in R using iGraph
 
 Work assignment for Network Analysis | Trabalho de grupo para análise de redes
 
