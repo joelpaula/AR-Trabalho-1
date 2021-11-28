@@ -124,8 +124,8 @@ utilizar-se a função sample_gnm com os parâmetros (n=15,m=18).
 graph1 <- read_graph("Trab1.txt",
                  format = c("edgelist"), 
                  n = 15, 
-                 directed = T)
-plot(graph1, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)
+                 directed = F)
+plot(graph1) #, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)
 ```
 
 ![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
@@ -135,29 +135,11 @@ edge_density(graph1, loops = F)
 ```
 
 ```
-## [1] 0.08571429
+## [1] 0.1714286
 ```
 
 ```r
 # 0.08571429
-sum(degree(graph1, mode = "in")) 
-```
-
-```
-## [1] 18
-```
-
-```r
-# grau incidente -> 18
-sum(degree(graph1, mode = "out")) 
-```
-
-```
-## [1] 18
-```
-
-```r
-# grau divergente -> 18
 sum(degree(graph1, mode = "total")) 
 ```
 
@@ -166,7 +148,7 @@ sum(degree(graph1, mode = "total"))
 ```
 
 ```r
-# grau total (grau incidente + grau divergente) -> 36
+# grau total -> 36
 mean(degree(graph1, mode = "total")) 
 ```
 
@@ -179,9 +161,9 @@ mean(degree(graph1, mode = "total"))
 ```
 A densidade é baixa, uma vez que nem todos as equipas tiveram finais entre si e portanto não existem todas as arestas que poderiam existir para ser um grafo completo.
 
-O grau incidente ou divergente é 18, uma vez que correspondem a 18 jogos entre um par de equipas, em 18 épocas.
+O grau é 36, uma vez que correspondem a 18 jogos entre um par de equipas, em 18 épocas.
 
-O grau médio é elevado, mas não é um bom indicador do grau dos seus nodos, pois apesar de 10 das equipas apenas terem estado presentes uma vez e 3 delas apenas 2 vezes, cada uma das 3 equipas mais presentes - Benfica, Sporting e Porto - estiveram presentes em todas as finais: Benfica = 5 (uma com o Porto), Porto = 9 (uma com Benfica e outra com Sporting), Sporting = 6 (1 com porto).
+O grau médio é elevado, mas não é um bom indicador do grau dos seus nodos, pois apesar de 9 das equipas apenas terem estado presentes uma vez e 3 delas apenas 2 ou 3 vezes, cada uma das 3 equipas mais presentes - Benfica, Sporting e Porto - estiveram presentes em todas as finais: Benfica = 5 (uma com o Porto), Porto = 9 (uma com Benfica e outra com Sporting), Sporting = 6 (1 com porto).
 
 ## Grafo 2 - rede aleatória
 
@@ -237,19 +219,71 @@ coeficientes de clustering dos nodos e da rede.
 > Compare os resultados obtidos para as duas redes. 
 > Interprete os valores obtidos para a primeira rede, no contexto da sua natureza.
 
-## Rede 1
+## Rede 1 - finais da Taça
 
 Começamos pelo Grafo 1, calculando a correlação de grau.
 
 
 ```r
 ### Graph 1
-assortativity_degree(graph1, directed = T) 
+assortativity_degree(graph1, directed = F) 
 ```
 
 ```
-## [1] -0.7713892
+## [1] -0.6627219
 ```
+
+Verificamos que a correlação é negativa, pelo que concluímos que *a rede é não associativa*.
+Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de maior grau, não existindo paridade de grau entre os nodos ligados entre si.
+
+Olhando para as distancias:
+
+```r
+options(width = 90)
+distances(graph1)
+```
+
+```
+##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15]
+##  [1,]    0    2    3    2    3    2    2    3    3     2     4     1     3     3     3
+##  [2,]    2    0    3    2    3    2    2    3    3     2     4     1     3     3     3
+##  [3,]    3    3    0    1    2    3    3    2    2     1     1     2     2     1     1
+##  [4,]    2    2    1    0    2    2    2    2    2     1     2     1     2     2     2
+##  [5,]    3    3    2    2    0    3    3    2    2     1     3     2     2     2     2
+##  [6,]    2    2    3    2    3    0    2    3    3     2     4     1     3     3     3
+##  [7,]    2    2    3    2    3    2    0    3    3     2     4     1     3     3     3
+##  [8,]    3    3    2    2    2    3    3    0    2     1     3     2     2     2     2
+##  [9,]    3    3    2    2    2    3    3    2    0     1     3     2     2     2     2
+## [10,]    2    2    1    1    1    2    2    1    1     0     2     1     1     1     1
+## [11,]    4    4    1    2    3    4    4    3    3     2     0     3     3     2     2
+## [12,]    1    1    2    1    2    1    1    2    2     1     3     0     2     2     2
+## [13,]    3    3    2    2    2    3    3    2    2     1     3     2     0     2     2
+## [14,]    3    3    1    2    2    3    3    2    2     1     2     2     2     0     2
+## [15,]    3    3    1    2    2    3    3    2    2     1     2     2     2     2     0
+```
+
+```r
+# média dos comprimentos dos caminhos mais curtos 
+mean_distance(graph1, directed = F) 
+```
+
+```
+## [1] 2.219048
+```
+
+```r
+# -> 1.485714
+diameter(graph1, directed = F) # 4, para não direcionado
+```
+
+```
+## [1] 4
+```
+
+A rede diz-se *conexa* porque existe um caminho entre qualquer par de nodos.
+
+O diâmetro de 4 acaba por confirmar o facto de existirem equipas que participaram em mais do que uma final e que esta rede representa um "small world".
+
 
 ```r
 transitivity(graph1)
@@ -272,71 +306,91 @@ transitivity(graph1, type = "average")
 # Average clustering coefficient -> 0.5240741
 ```
 
-Verificamos que a correlação é negativa, pelo que concluímos que *a rede é não associativa*.
-Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de maior grau, não existindo paridade de grau entre os nodos ligados entre si.
+O Coeficiente de clustering é bem menor que 1, o que indica que existe fraca probabilidade que duas equipas que tenham jogado uma final, tenham ambas jogado uma final com uma outra equipa. Isso indica que não é fácil para algumas equipas chegarem várias vezes à final da Taça.
 
-Olhando para as distancias:
+## Rede 2 - aleatória
+
 
 ```r
-distances(graph1)
+### Graph 2
+assortativity_degree(graph2, directed = F) 
 ```
 
 ```
-##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,]    0    2    3    2    3    2    2    3    3     2     4     1     3
-##  [2,]    2    0    3    2    3    2    2    3    3     2     4     1     3
-##  [3,]    3    3    0    1    2    3    3    2    2     1     1     2     2
-##  [4,]    2    2    1    0    2    2    2    2    2     1     2     1     2
-##  [5,]    3    3    2    2    0    3    3    2    2     1     3     2     2
-##  [6,]    2    2    3    2    3    0    2    3    3     2     4     1     3
-##  [7,]    2    2    3    2    3    2    0    3    3     2     4     1     3
-##  [8,]    3    3    2    2    2    3    3    0    2     1     3     2     2
-##  [9,]    3    3    2    2    2    3    3    2    0     1     3     2     2
-## [10,]    2    2    1    1    1    2    2    1    1     0     2     1     1
-## [11,]    4    4    1    2    3    4    4    3    3     2     0     3     3
-## [12,]    1    1    2    1    2    1    1    2    2     1     3     0     2
-## [13,]    3    3    2    2    2    3    3    2    2     1     3     2     0
-## [14,]    3    3    1    2    2    3    3    2    2     1     2     2     2
-## [15,]    3    3    1    2    2    3    3    2    2     1     2     2     2
-##       [,14] [,15]
-##  [1,]     3     3
-##  [2,]     3     3
-##  [3,]     1     1
-##  [4,]     2     2
-##  [5,]     2     2
-##  [6,]     3     3
-##  [7,]     3     3
-##  [8,]     2     2
-##  [9,]     2     2
-## [10,]     1     1
-## [11,]     2     2
-## [12,]     2     2
-## [13,]     2     2
-## [14,]     0     2
-## [15,]     2     0
+## [1] -0.25
 ```
 
 ```r
-# média dos comprimentos dos caminhos mais curtos 
-mean_distance(graph1, directed = T) 
+# 0.02857143
+options(width = 90)
+distances(graph2)
 ```
 
 ```
-## [1] 1.485714
+##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15]
+##  [1,]    0    1    2    3    2    3    2    3    3     2     2     3     1   Inf     2
+##  [2,]    1    0    2    2    1    3    1    2    2     1     1     2     1   Inf     1
+##  [3,]    2    2    0    4    3    1    3    4    4     3     1     4     1   Inf     3
+##  [4,]    3    2    4    0    1    5    1    4    1     3     3     2     3   Inf     3
+##  [5,]    2    1    3    1    0    4    2    3    2     2     2     1     2   Inf     2
+##  [6,]    3    3    1    5    4    0    4    5    5     4     2     5     2   Inf     4
+##  [7,]    2    1    3    1    2    4    0    3    1     2     2     3     2   Inf     2
+##  [8,]    3    2    4    4    3    5    3    0    4     1     3     4     3   Inf     1
+##  [9,]    3    2    4    1    2    5    1    4    0     3     3     3     3   Inf     3
+## [10,]    2    1    3    3    2    4    2    1    3     0     2     3     2   Inf     2
+## [11,]    2    1    1    3    2    2    2    3    3     2     0     3     2   Inf     2
+## [12,]    3    2    4    2    1    5    3    4    3     3     3     0     3   Inf     3
+## [13,]    1    1    1    3    2    2    2    3    3     2     2     3     0   Inf     2
+## [14,]  Inf  Inf  Inf  Inf  Inf  Inf  Inf  Inf  Inf   Inf   Inf   Inf   Inf     0   Inf
+## [15,]    2    1    3    3    2    4    2    1    3     2     2     3     2   Inf     0
 ```
 
 ```r
-# -> 1.485714
-diameter(graph1, directed = T) # 2
+mean_distance(graph2, directed = F) 
 ```
 
 ```
-## [1] 2
+## [1] 2.483516
 ```
 
-A rede diz-se fracamente conexa uma vez que é orientada e existe um caminho entre qualquer par de nodos (i,j) , de i para j ou de j para i - mas nunca existem caminhos de sentido inverso.
+```r
+# média dos comprimentos dos caminhos mais curtos -> 2.483516
+diameter(graph2, directed = F) # 5
+```
+
+```
+## [1] 5
+```
+
+Concluímos que, sendo a correlação negativa, *a rede é não associativa*. O que se pode observar por nodos de grau maior se ligarem a nodos de grau menor.
+
+A rede é composta por duas subredes - uma desconexa composta do nodo 14, sem qualquer conexão, e outra componente gigante e conexa.
+
+A componente gigante diz-se *conexa* uma vez que existe um caminho entre qualquer par de nodos.
 
 
+```r
+transitivity(graph2)
+```
+
+```
+## [1] 0.1428571
+```
+
+```r
+# Global clustering coefficient -> 0.1428571
+transitivity(graph2, type = "average")
+```
+
+```
+## [1] 0.2539683
+```
+
+```r
+# Average clustering coefficient -> 0.2539683
+```
+
+O Coeficiente de clustering também é bem menor que 1, o que indica que não existem relações próximas entre todos os nodos.
 
 # Q3.
 

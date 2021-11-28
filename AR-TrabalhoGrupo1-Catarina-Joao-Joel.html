@@ -547,27 +547,21 @@ pre code {
 graph1 &lt;- read_graph(&quot;Trab1.txt&quot;,
                  format = c(&quot;edgelist&quot;), 
                  n = 15, 
-                 directed = T)
-plot(graph1, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)</code></pre>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
+                 directed = F)
+plot(graph1) #, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)</code></pre>
+<p><img src="data:image/png;base64,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mId/9OJhUU17kyFQR53zMLmt0cbOYR756cYDI5s4LBPPktxW1zxMrhvcvpNDjH++emRsUy9molmQG2vMw1TOi+z+fXBqoFWi0d3pOBPLctxYcx6m4r4vE774GVwHMv4c1pM/LkQki3FrrUkavv857T43PgKN8k7HmTiW4uaage43E2/E1H/+p/VLqiZ+JNDEtWeymxao0aV0o6qbMRcTP+aBRjHaRKBOGoF+f5ktUJtCyz6riR+jWYVGsRC3d56H6fCt+I37+sproNXEjwSauDrQ53VuM8NX0JG/u35BjYkfCTRxrXmYdpNuBuoz0GM18SOBpq45D9OkWx+YXzA/6HgeZnq+YycJ56nls0AnvI2eAm2Mg+4ZZsKHtyPfY9cf2b+c/YZA8eHr3CFvlx9VhR6+vsbTJ4FO4uPsS3/XxxV3Oi7PEIjlg41lOZbLcl6cIZxuB+8Mro4zfzJOWIZv9jM3DeKSD/jlOdDoEGhgJvWlXCiBBkagwwg0LMOLi2d+FcIINCwCHUGgYTlOIJoOAg2LQEcQaFjG84fM+iqEEWhYBDqCQIOaMgtzGgg0KKtAozuMaYJAg0r7RBATaS2tnLRPpTOR1MLqcbigI7FCU1pWQaaBxjlznYmEFlWQY58pFZrOkiqyDPS5njUknY8tnSUVYzNmVE7KkE0UEdWkDCYINAi7MaNq3qX7YrbxpFahySyoFMsxoyrQU5y7+8S28cksqBLbMaN68uS7999eCRQzsx4zqn5gv/70ktpufDILqsN+zKjcSXr7438PZaHsJGE251ssvT/k8yGbrkKf7+spH9P52NJZUhXnWyy9//Jy3J1WieOrwzzQ94dN8TMEihmd77/wbxbpr0+mq9B8tVsMMyX0qSW0qCJa9wA7Hn4235HPJqBPrU8CvblWoMVcnuZjoWntwWeSWlgJzUB363zgyOxwEics4xbOt1gqEr03HjPikg/cQivQ7AA7n8EA3pybawV6fN4Q6BDenNtr3mLptJfERzCEdyeA8hZL+3U2bMQnMIi3J4RUx4wc8P4EkeiYkQPeoECSHDNyQKCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQRqCQ9n9aO8ePI30gNQAAAABJRU5ErkJggg==" /><!-- --></p>
 <pre class="r"><code>edge_density(graph1, loops = F) </code></pre>
-<pre><code>## [1] 0.08571429</code></pre>
+<pre><code>## [1] 0.1714286</code></pre>
 <pre class="r"><code># 0.08571429
-sum(degree(graph1, mode = &quot;in&quot;)) </code></pre>
-<pre><code>## [1] 18</code></pre>
-<pre class="r"><code># grau incidente -&gt; 18
-sum(degree(graph1, mode = &quot;out&quot;)) </code></pre>
-<pre><code>## [1] 18</code></pre>
-<pre class="r"><code># grau divergente -&gt; 18
 sum(degree(graph1, mode = &quot;total&quot;)) </code></pre>
 <pre><code>## [1] 36</code></pre>
-<pre class="r"><code># grau total (grau incidente + grau divergente) -&gt; 36
+<pre class="r"><code># grau total -&gt; 36
 mean(degree(graph1, mode = &quot;total&quot;)) </code></pre>
 <pre><code>## [1] 2.4</code></pre>
 <pre class="r"><code># grau médio -&gt; 2.4</code></pre>
 <p>A densidade é baixa, uma vez que nem todos as equipas tiveram finais entre si e portanto não existem todas as arestas que poderiam existir para ser um grafo completo.</p>
-<p>O grau incidente ou divergente é 18, uma vez que correspondem a 18 jogos entre um par de equipas, em 18 épocas.</p>
-<p>O grau médio é elevado, mas não é um bom indicador do grau dos seus nodos, pois apesar de 10 das equipas apenas terem estado presentes uma vez e 3 delas apenas 2 vezes, cada uma das 3 equipas mais presentes - Benfica, Sporting e Porto - estiveram presentes em todas as finais: Benfica = 5 (uma com o Porto), Porto = 9 (uma com Benfica e outra com Sporting), Sporting = 6 (1 com porto).</p>
+<p>O grau é 36, uma vez que correspondem a 18 jogos entre um par de equipas, em 18 épocas.</p>
+<p>O grau médio é elevado, mas não é um bom indicador do grau dos seus nodos, pois apesar de 9 das equipas apenas terem estado presentes uma vez e 3 delas apenas 2 ou 3 vezes, cada uma das 3 equipas mais presentes - Benfica, Sporting e Porto - estiveram presentes em todas as finais: Benfica = 5 (uma com o Porto), Porto = 9 (uma com Benfica e outra com Sporting), Sporting = 6 (1 com porto).</p>
 </div>
 <div id="grafo-2---rede-aleatória" class="section level2">
 <h2>Grafo 2 - rede aleatória</h2>
@@ -594,60 +588,87 @@ mean(degree(graph2, mode = &quot;total&quot;)) </code></pre>
 <blockquote>
 <p>Estude cada uma das redes quanto à associação de grau, aos comprimentos dos caminhos mais curtos, à média dos comprimentos dos caminhos mais curtos, à conectividade, aos coeficientes de clustering dos nodos e da rede. Compare os resultados obtidos para as duas redes. Interprete os valores obtidos para a primeira rede, no contexto da sua natureza.</p>
 </blockquote>
-<div id="rede-1" class="section level2">
-<h2>Rede 1</h2>
+<div id="rede-1---finais-da-taça" class="section level2">
+<h2>Rede 1 - finais da Taça</h2>
 <p>Começamos pelo Grafo 1, calculando a correlação de grau.</p>
 <pre class="r"><code>### Graph 1
-assortativity_degree(graph1, directed = T) </code></pre>
-<pre><code>## [1] -0.7713892</code></pre>
+assortativity_degree(graph1, directed = F) </code></pre>
+<pre><code>## [1] -0.6627219</code></pre>
+<p>Verificamos que a correlação é negativa, pelo que concluímos que <em>a rede é não associativa</em>. Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de maior grau, não existindo paridade de grau entre os nodos ligados entre si.</p>
+<p>Olhando para as distancias:</p>
+<pre class="r"><code>options(width = 90)
+distances(graph1)</code></pre>
+<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15]
+##  [1,]    0    2    3    2    3    2    2    3    3     2     4     1     3     3     3
+##  [2,]    2    0    3    2    3    2    2    3    3     2     4     1     3     3     3
+##  [3,]    3    3    0    1    2    3    3    2    2     1     1     2     2     1     1
+##  [4,]    2    2    1    0    2    2    2    2    2     1     2     1     2     2     2
+##  [5,]    3    3    2    2    0    3    3    2    2     1     3     2     2     2     2
+##  [6,]    2    2    3    2    3    0    2    3    3     2     4     1     3     3     3
+##  [7,]    2    2    3    2    3    2    0    3    3     2     4     1     3     3     3
+##  [8,]    3    3    2    2    2    3    3    0    2     1     3     2     2     2     2
+##  [9,]    3    3    2    2    2    3    3    2    0     1     3     2     2     2     2
+## [10,]    2    2    1    1    1    2    2    1    1     0     2     1     1     1     1
+## [11,]    4    4    1    2    3    4    4    3    3     2     0     3     3     2     2
+## [12,]    1    1    2    1    2    1    1    2    2     1     3     0     2     2     2
+## [13,]    3    3    2    2    2    3    3    2    2     1     3     2     0     2     2
+## [14,]    3    3    1    2    2    3    3    2    2     1     2     2     2     0     2
+## [15,]    3    3    1    2    2    3    3    2    2     1     2     2     2     2     0</code></pre>
+<pre class="r"><code># média dos comprimentos dos caminhos mais curtos 
+mean_distance(graph1, directed = F) </code></pre>
+<pre><code>## [1] 2.219048</code></pre>
+<pre class="r"><code># -&gt; 1.485714
+diameter(graph1, directed = F) # 4, para não direcionado</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>A rede diz-se <em>conexa</em> porque existe um caminho entre qualquer par de nodos.</p>
+<p>O diâmetro de 4 acaba por confirmar o facto de existirem equipas que participaram em mais do que uma final e que esta rede representa um “small world”.</p>
 <pre class="r"><code>transitivity(graph1)</code></pre>
 <pre><code>## [1] 0.1818182</code></pre>
 <pre class="r"><code># Global clustering coefficient -&gt; 0.1818182
 transitivity(graph1, type = &quot;average&quot;)</code></pre>
 <pre><code>## [1] 0.5240741</code></pre>
 <pre class="r"><code># Average clustering coefficient -&gt; 0.5240741</code></pre>
-<p>Verificamos que a correlação é negativa, pelo que concluímos que <em>a rede é não associativa</em>. Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de maior grau, não existindo paridade de grau entre os nodos ligados entre si.</p>
-<p>Olhando para as distancias:</p>
-<pre class="r"><code>distances(graph1)</code></pre>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,]    0    2    3    2    3    2    2    3    3     2     4     1     3
-##  [2,]    2    0    3    2    3    2    2    3    3     2     4     1     3
-##  [3,]    3    3    0    1    2    3    3    2    2     1     1     2     2
-##  [4,]    2    2    1    0    2    2    2    2    2     1     2     1     2
-##  [5,]    3    3    2    2    0    3    3    2    2     1     3     2     2
-##  [6,]    2    2    3    2    3    0    2    3    3     2     4     1     3
-##  [7,]    2    2    3    2    3    2    0    3    3     2     4     1     3
-##  [8,]    3    3    2    2    2    3    3    0    2     1     3     2     2
-##  [9,]    3    3    2    2    2    3    3    2    0     1     3     2     2
-## [10,]    2    2    1    1    1    2    2    1    1     0     2     1     1
-## [11,]    4    4    1    2    3    4    4    3    3     2     0     3     3
-## [12,]    1    1    2    1    2    1    1    2    2     1     3     0     2
-## [13,]    3    3    2    2    2    3    3    2    2     1     3     2     0
-## [14,]    3    3    1    2    2    3    3    2    2     1     2     2     2
-## [15,]    3    3    1    2    2    3    3    2    2     1     2     2     2
-##       [,14] [,15]
-##  [1,]     3     3
-##  [2,]     3     3
-##  [3,]     1     1
-##  [4,]     2     2
-##  [5,]     2     2
-##  [6,]     3     3
-##  [7,]     3     3
-##  [8,]     2     2
-##  [9,]     2     2
-## [10,]     1     1
-## [11,]     2     2
-## [12,]     2     2
-## [13,]     2     2
-## [14,]     0     2
-## [15,]     2     0</code></pre>
-<pre class="r"><code># média dos comprimentos dos caminhos mais curtos 
-mean_distance(graph1, directed = T) </code></pre>
-<pre><code>## [1] 1.485714</code></pre>
-<pre class="r"><code># -&gt; 1.485714
-diameter(graph1, directed = T) # 2</code></pre>
-<pre><code>## [1] 2</code></pre>
-<p>A rede diz-se fracamente conexa uma vez que é orientada e existe um caminho entre qualquer par de nodos (i,j) , de i para j ou de j para i - mas nunca existem caminhos de sentido inverso.</p>
+<p>O Coeficiente de clustering é bem menor que 1, o que indica que existe fraca probabilidade que duas equipas que tenham jogado uma final, tenham ambas jogado uma final com uma outra equipa. Isso indica que não é fácil para algumas equipas chegarem várias vezes à final da Taça.</p>
+</div>
+<div id="rede-2---aleatória" class="section level2">
+<h2>Rede 2 - aleatória</h2>
+<pre class="r"><code>### Graph 2
+assortativity_degree(graph2, directed = F) </code></pre>
+<pre><code>## [1] -0.25</code></pre>
+<pre class="r"><code># 0.02857143
+options(width = 90)
+distances(graph2)</code></pre>
+<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15]
+##  [1,]    0    1    2    3    2    3    2    3    3     2     2     3     1   Inf     2
+##  [2,]    1    0    2    2    1    3    1    2    2     1     1     2     1   Inf     1
+##  [3,]    2    2    0    4    3    1    3    4    4     3     1     4     1   Inf     3
+##  [4,]    3    2    4    0    1    5    1    4    1     3     3     2     3   Inf     3
+##  [5,]    2    1    3    1    0    4    2    3    2     2     2     1     2   Inf     2
+##  [6,]    3    3    1    5    4    0    4    5    5     4     2     5     2   Inf     4
+##  [7,]    2    1    3    1    2    4    0    3    1     2     2     3     2   Inf     2
+##  [8,]    3    2    4    4    3    5    3    0    4     1     3     4     3   Inf     1
+##  [9,]    3    2    4    1    2    5    1    4    0     3     3     3     3   Inf     3
+## [10,]    2    1    3    3    2    4    2    1    3     0     2     3     2   Inf     2
+## [11,]    2    1    1    3    2    2    2    3    3     2     0     3     2   Inf     2
+## [12,]    3    2    4    2    1    5    3    4    3     3     3     0     3   Inf     3
+## [13,]    1    1    1    3    2    2    2    3    3     2     2     3     0   Inf     2
+## [14,]  Inf  Inf  Inf  Inf  Inf  Inf  Inf  Inf  Inf   Inf   Inf   Inf   Inf     0   Inf
+## [15,]    2    1    3    3    2    4    2    1    3     2     2     3     2   Inf     0</code></pre>
+<pre class="r"><code>mean_distance(graph2, directed = F) </code></pre>
+<pre><code>## [1] 2.483516</code></pre>
+<pre class="r"><code># média dos comprimentos dos caminhos mais curtos -&gt; 2.483516
+diameter(graph2, directed = F) # 5</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p>Concluímos que, sendo a correlação negativa, <em>a rede é não associativa</em>. O que se pode observar por nodos de grau maior se ligarem a nodos de grau menor.</p>
+<p>A rede é composta por duas subredes - uma desconexa composta do nodo 14, sem qualquer conexão, e outra componente gigante e conexa.</p>
+<p>A componente gigante diz-se <em>conexa</em> uma vez que existe um caminho entre qualquer par de nodos.</p>
+<pre class="r"><code>transitivity(graph2)</code></pre>
+<pre><code>## [1] 0.1428571</code></pre>
+<pre class="r"><code># Global clustering coefficient -&gt; 0.1428571
+transitivity(graph2, type = &quot;average&quot;)</code></pre>
+<pre><code>## [1] 0.2539683</code></pre>
+<pre class="r"><code># Average clustering coefficient -&gt; 0.2539683</code></pre>
+<p>O Coeficiente de clustering também é bem menor que 1, o que indica que não existem relações próximas entre todos os nodos.</p>
 </div>
 </div>
 <div id="q3." class="section level1">

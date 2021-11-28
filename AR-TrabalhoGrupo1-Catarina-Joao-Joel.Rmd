@@ -6,10 +6,10 @@ author:
 - Joel Paula, 93392
 date: "26/11/2021"
 output:
+  pdf_document: default
+  word_document: default
   html_document:
     keep_md: yes
-  word_document: default
-  pdf_document: default
 subtitle: 'Ciência de Dados - PL - 3º ano | Professora: Maria João Frazão Lopes'
 header-includes:
 - \usepackage[sfdefault]{roboto}
@@ -25,7 +25,6 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(igraph)
-igraph_options(add.vertex.names = T)
 ```
 
 # Enunciado
@@ -127,25 +126,21 @@ utilizar-se a função sample_gnm com os parâmetros (n=15,m=18).
 graph1 <- read_graph("Trab1.txt",
                  format = c("edgelist"), 
                  n = 15, 
-                 directed = T)
-plot(graph1, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)
+                 directed = F)
+plot(graph1) #, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)
 
 
 edge_density(graph1, loops = F) 
 # 0.08571429
-sum(degree(graph1, mode = "in")) 
-# grau incidente -> 18
-sum(degree(graph1, mode = "out")) 
-# grau divergente -> 18
 sum(degree(graph1, mode = "total")) 
-# grau total (grau incidente + grau divergente) -> 36
+# grau total -> 36
 mean(degree(graph1, mode = "total")) 
 # grau médio -> 2.4
 
 ```
 A densidade é baixa, uma vez que nem todos as equipas tiveram finais entre si e portanto não existem todas as arestas que poderiam existir para ser um grafo completo.
 
-O grau incidente ou divergente é 18, uma vez que correspondem a 18 jogos entre um par de equipas, em 18 épocas.
+O grau é 36, uma vez que correspondem a 18 jogos entre um par de equipas, em 18 épocas.
 
 O grau médio é elevado, mas não é um bom indicador do grau dos seus nodos, pois apesar de 9 das equipas apenas terem estado presentes uma vez e 3 delas apenas 2 ou 3 vezes, cada uma das 3 equipas mais presentes - Benfica, Sporting e Porto - estiveram presentes em todas as finais: Benfica = 5 (uma com o Porto), Porto = 9 (uma com Benfica e outra com Sporting), Sporting = 6 (1 com porto).
 
@@ -183,7 +178,7 @@ Começamos pelo Grafo 1, calculando a correlação de grau.
 
 ```{r}
 ### Graph 1
-assortativity_degree(graph1, directed = T) 
+assortativity_degree(graph1, directed = F) 
 
 ```
 
@@ -192,19 +187,15 @@ Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados
 
 Olhando para as distancias:
 ```{r}
+options(width = 90)
 distances(graph1)
 # média dos comprimentos dos caminhos mais curtos 
 mean_distance(graph1, directed = F) 
 # -> 1.485714
-diameter(graph1, directed = T) # 2
 diameter(graph1, directed = F) # 4, para não direcionado
 ```
 
-**TO DO SELECIONAR UMA DAS DUAS OU MOSTRAR AMBAS ?**
-A rede diz-se *fracamente conexa uma vez que é orientada* e existe um caminho entre qualquer par de nodos (i,j) , de i para j ou de j para i - mas nunca existem caminhos de sentido inverso.
-
-Se considerarmos a *rede não direcionada, então ela é conexa* porque existe um caminho entre qualquer par de nodos.
-
+A rede diz-se *conexa* porque existe um caminho entre qualquer par de nodos.
 
 O diâmetro de 4 acaba por confirmar o facto de existirem equipas que participaram em mais do que uma final e que esta rede representa um "small world".
 
@@ -224,6 +215,7 @@ O Coeficiente de clustering é bem menor que 1, o que indica que existe fraca pr
 ### Graph 2
 assortativity_degree(graph2, directed = F) 
 # 0.02857143
+options(width = 90)
 distances(graph2)
 mean_distance(graph2, directed = F) 
 # média dos comprimentos dos caminhos mais curtos -> 2.483516
