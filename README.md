@@ -2,7 +2,7 @@
 
 Work assignment for Network Analysis | Trabalho de grupo para análise de redes
 
-ISCTE - Ciência de Dados - PL - 3º ano | Data Science - PL - 3^rd^ year
+ISCTE - Ciência de Dados - PL - 3º ano | Data Science - PL - 3<sup>rd</sup> year
 
 Professora | Teacher: Maria João Frazão Lopes
 
