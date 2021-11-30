@@ -198,7 +198,7 @@ assortativity_degree(graph1, directed = F)
 
 Verificamos que a correlação é negativa, pelo que concluímos que *a rede é não associativa*.
 
-Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de maior grau, não existindo paridade de grau entre os nodos ligados entre si.
+Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de maior grau, não existindo paridade de grau entre os nodos ligados entre si. Contextualizando, verifica-se que tendencialmente as finais da Taça são disputadas entre uma equipa do grupo daquelas com maior número de participações e uma equipa do grupo daquelas com menor participações em finais.
 
 Olhando para as distancias:
 
