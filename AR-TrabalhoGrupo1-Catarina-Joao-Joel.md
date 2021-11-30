@@ -33,88 +33,92 @@ até à época de 2020-21, com excepção das épocas de 2003-04, 2007-08 e 2012
 representa uma equipa e cada ligação uma final. Nas tabelas seguintes indicam-se as
 equipas e as finais.
 
-+------------+-------------------------------+
-| Nodos      | Equipa                        |
-+:==========:+:=============================:+
-| 1          | Académica                     |
-+------------+-------------------------------+
-| 2          | Belenenses                    |
-+------------+-------------------------------+
-| 3          | Benfica                       |
-+------------+-------------------------------+
-| 4          | Braga                         |
-+------------+-------------------------------+
-| 5          | Chaves                        |
-+------------+-------------------------------+
-| 6          | Desportivo das Aves           |
-+------------+-------------------------------+
-| 7          | Leixões                       |
-+------------+-------------------------------+
-| 8          | Marítimo                      |
-+------------+-------------------------------+
-| 9          | Paços de Ferreira             |
-+------------+-------------------------------+
-| 10         | Porto                         |
-+------------+-------------------------------+
-| 11         | Rio Ave                       |
-+------------+-------------------------------+
-| 12         | Sporting CP                   |
-+------------+-------------------------------+
-| 13         | União de Leiria               |
-+------------+-------------------------------+
-| 14         | Vitória de Guimarães          |
-+------------+-------------------------------+
-| 15         | Vitória de Setúbal            |
-+------------+-------------------------------+
++---------------+---------------------------------------+
+| Nodos         | Equipa                                |
++:=============:+:=====================================:+
+| 1             | Académica                             |
++---------------+---------------------------------------+
+| 2             | Belenenses                            |
++---------------+---------------------------------------+
+| 3             | Benfica                               |
++---------------+---------------------------------------+
+| 4             | Braga                                 |
++---------------+---------------------------------------+
+| 5             | Chaves                                |
++---------------+---------------------------------------+
+| 6             | Desportivo das Aves                   |
++---------------+---------------------------------------+
+| 7             | Leixões                               |
++---------------+---------------------------------------+
+| 8             | Marítimo                              |
++---------------+---------------------------------------+
+| 9             | Paços de Ferreira                     |
++---------------+---------------------------------------+
+| 10            | Porto                                 |
++---------------+---------------------------------------+
+| 11            | Rio Ave                               |
++---------------+---------------------------------------+
+| 12            | Sporting CP                           |
++---------------+---------------------------------------+
+| 13            | União de Leiria                       |
++---------------+---------------------------------------+
+| 14            | Vitória de Guimarães                  |
++---------------+---------------------------------------+
+| 15            | Vitória de Setúbal                    |
++---------------+---------------------------------------+
 
-+---------------------+----------------------+
-| Equipa              | Equipa               |
-+:===================:+:====================:+
-| Académica           | Sporting CP          |
-+---------------------+----------------------+
-| Belenenses          | Sporting CP          |
-+---------------------+----------------------+
-| Benfica             | Braga                |
-+---------------------+----------------------+
-| Benfica             | Porto                |
-+---------------------+----------------------+
-| Benfica             | Rio Ave              |
-+---------------------+----------------------+
-| Benfica             | Vitória de Guimarães |
-+---------------------+----------------------+
-| Benfica             | Vitória de Setúbal   |
-+---------------------+----------------------+
-| Braga               | Porto                |
-+---------------------+----------------------+
-| Braga               | Sporting CP          |
-+---------------------+----------------------+
-| Chaves              | Porto                |
-+---------------------+----------------------+
-| Desportivo das Aves | Sporting CP          |
-+---------------------+----------------------+
-| Leixões             | Sporting CP          |
-+---------------------+----------------------+
-| Marítimo            | Porto                |
-+---------------------+----------------------+
-| Paços de Ferreira   | Porto                |
-+---------------------+----------------------+
-| Porto               | Sporting CP          |
-+---------------------+----------------------+
-| Porto               | União de Leiria      |
-+---------------------+----------------------+
-| Porto               | Vitória de Guimarães |
-+---------------------+----------------------+
-| Porto               | Vitória de Setúbal   |
-+---------------------+----------------------+
+: Tabela 1 - Finais da Taça de Portugal - Nodos da rede
+
++--------------------------+---------------------------+
+| Equipa                   | Equipa                    |
++:========================:+:=========================:+
+| Académica                | Sporting CP               |
++--------------------------+---------------------------+
+| Belenenses               | Sporting CP               |
++--------------------------+---------------------------+
+| Benfica                  | Braga                     |
++--------------------------+---------------------------+
+| Benfica                  | Porto                     |
++--------------------------+---------------------------+
+| Benfica                  | Rio Ave                   |
++--------------------------+---------------------------+
+| Benfica                  | Vitória de Guimarães      |
++--------------------------+---------------------------+
+| Benfica                  | Vitória de Setúbal        |
++--------------------------+---------------------------+
+| Braga                    | Porto                     |
++--------------------------+---------------------------+
+| Braga                    | Sporting CP               |
++--------------------------+---------------------------+
+| Chaves                   | Porto                     |
++--------------------------+---------------------------+
+| Desportivo das Aves      | Sporting CP               |
++--------------------------+---------------------------+
+| Leixões                  | Sporting CP               |
++--------------------------+---------------------------+
+| Marítimo                 | Porto                     |
++--------------------------+---------------------------+
+| Paços de Ferreira        | Porto                     |
++--------------------------+---------------------------+
+| Porto                    | Sporting CP               |
++--------------------------+---------------------------+
+| Porto                    | União de Leiria           |
++--------------------------+---------------------------+
+| Porto                    | Vitória de Guimarães      |
++--------------------------+---------------------------+
+| Porto                    | Vitória de Setúbal        |
++--------------------------+---------------------------+
+
+: Tabela 2 - Finais da Taça de Portugal - Arestas da rede
 
 A segunda rede é uma rede aleatória com 15 nodos e 18 ligações. Para obter esta rede, deve
 utilizar-se a função `sample_gnm` com os parâmetros (n=15,m=18).
 
 # Q1.
 
-> Estude cada uma das redes quanto à densidade, ao grau dos nodos e grau médio. 
+> Estude cada uma das redes quanto à densidade, ao grau dos nodos e grau médio.
 >
-> Compare os resultados obtidos para as duas redes. 
+> Compare os resultados obtidos para as duas redes.
 >
 > Interprete os valores obtidos para a primeira rede, no contexto da sua natureza.
 
@@ -127,10 +131,13 @@ graph1 <- read_graph("Trab1.txt",
                  format = c("edgelist"), 
                  n = 15, 
                  directed = F)
-plot(graph1) #, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)
+plot(graph1, ) #, edge.curved=0.2, edge.arrow.size=0.5, edge.arrow.width=1)
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-1-1.png" alt="Figura 1 - rede de Finais da Taça de Portugal"  />
+<p class="caption">Figura 1 - rede de Finais da Taça de Portugal</p>
+</div>
 
 ```r
 edge_density(graph1, loops = F) 
@@ -161,11 +168,17 @@ mean(degree(graph1, mode = "total"))
 ```r
 # grau médio -> 2.4
 ```
-A densidade é baixa, uma vez que nem todos as equipas tiveram finais entre si e portanto não existem todas as arestas que poderiam existir para ser um grafo completo.
+
+A densidade é baixa, uma vez que nem todos as equipas tiveram finais entre si e portanto
+não existem todas as arestas que poderiam existir para ser um grafo completo.
 
 O grau é 36, uma vez que correspondem a 18 jogos entre um par de equipas, em 18 épocas.
 
-O grau médio é elevado, mas não é um bom indicador do grau dos seus nodos, pois apesar de 9 das equipas apenas terem estado presentes uma vez e 3 delas apenas 2 ou 3 vezes, cada uma das 3 equipas mais presentes - Benfica, Sporting e Porto - estiveram presentes em todas as finais: Benfica = 5 (uma com o Porto), Porto = 9 (uma com Benfica e outra com Sporting), Sporting = 6 (1 com porto).
+O grau médio é elevado, mas não é um bom indicador do grau dos seus nodos, pois apesar de
+9 das equipas apenas terem estado presentes uma vez e 3 delas apenas 2 ou 3 vezes, cada
+uma das 3 equipas mais presentes - Benfica, Sporting e Porto - estiveram presentes em
+todas as finais: Benfica = 5 (uma com o Porto), Porto = 9 (uma com Benfica e outra com
+Sporting), Sporting = 6 (1 com porto).
 
 ## Grafo 2 - rede aleatória
 
@@ -177,7 +190,10 @@ graph2 <- sample_gnm(15, 18)
 plot(graph2)
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-2-1.png" alt="Figura 2 - rede aleatória"  />
+<p class="caption">Figura 2 - rede aleatória</p>
+</div>
 
 ```r
 edge_density(graph2, loops = F) 
@@ -209,20 +225,21 @@ mean(degree(graph2, mode = "total"))
 # grau médio -> 2.4
 ```
 
-A densidade é baixa, uma vez que nem todos os nodos estão ligados entre si diretamente - não é um grafo completo.
+A densidade é baixa, uma vez que nem todos os nodos estão ligados entre si diretamente -
+não é um grafo completo.
 
-O grau é 36, o mesmo do anterior, já que o número de nodos e de arestas é o mesmo da rede anterior.
+O grau é 36, o mesmo do anterior, já que o número de nodos e de arestas é o mesmo da rede
+anterior.
 
 O grau médio acaba por espelhar melhor o tipo de grafo do que no caso anterior.
-
 
 # Q2.
 
 > Estude cada uma das redes quanto à associação de grau, aos comprimentos dos caminhos
-mais curtos, à média dos comprimentos dos caminhos mais curtos, à conectividade, aos
-coeficientes de clustering dos nodos e da rede. 
+> mais curtos, à média dos comprimentos dos caminhos mais curtos, à conectividade, aos
+> coeficientes de *clustering* dos nodos e da rede.
 >
-> Compare os resultados obtidos para as duas redes. 
+> Compare os resultados obtidos para as duas redes.
 >
 > Interprete os valores obtidos para a primeira rede, no contexto da sua natureza.
 
@@ -240,11 +257,14 @@ assortativity_degree(graph1, directed = F)
 ## [1] -0.6627219
 ```
 
-Verificamos que a correlação é negativa, pelo que concluímos que *a rede é não associativa*.
+Verificamos que a correlação é negativa, pelo que concluímos que *a rede é não
+associativa*.
 
-Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de maior grau, não existindo paridade de grau entre os nodos ligados entre si.
+Este resultado não surpreende, pois os nodos de menor grau encontram-se ligados aos de
+maior grau, não existindo paridade de grau entre os nodos ligados entre si.
 
 Olhando para as distancias:
+
 
 ```r
 options(width = 90)
@@ -290,7 +310,8 @@ diameter(graph1, directed = F) # 4, para não direcionado
 
 A rede diz-se *conexa* porque existe um caminho entre qualquer par de nodos.
 
-O diâmetro de 4 acaba por confirmar o facto de existirem equipas que participaram em mais do que uma final e que esta rede representa um "small world".
+O diâmetro de 4 acaba por confirmar o facto de existirem equipas que participaram em mais
+do que uma final e que esta rede representa um "*small world*".
 
 
 ```r
@@ -314,7 +335,10 @@ transitivity(graph1, type = "average")
 # Average clustering coefficient -> 0.5240741
 ```
 
-O Coeficiente de clustering é bem menor que 1, o que indica que existe fraca probabilidade que duas equipas que tenham jogado uma final, tenham ambas jogado uma final com uma outra equipa. Isso indica que não é fácil para algumas equipas chegarem várias vezes à final da Taça.
+O Coeficiente de *clustering* é bem menor que 1, o que indica que existe fraca
+probabilidade que duas equipas que tenham jogado uma final, tenham ambas jogado uma final
+com uma outra equipa. Isso indica que não é fácil para algumas equipas chegarem várias
+vezes à final da Taça.
 
 ## Rede 2 - aleatória
 
@@ -370,11 +394,14 @@ diameter(graph2, directed = F) # 5
 ## [1] 5
 ```
 
-Concluímos que, sendo a correlação negativa, *a rede é não associativa*. O que se pode observar por nodos de grau maior se ligarem a nodos de grau menor. 
+Concluímos que, sendo a correlação negativa, *a rede é não associativa*. O que se pode
+observar por nodos de grau maior se ligarem a nodos de grau menor.
 
-A rede é composta por duas subredes - uma desconexa composta do nodo 14, sem qualquer conexão, e outra componente gigante e conexa.
+A rede é composta por duas subredes - uma desconexa composta do nodo 14, sem qualquer
+conexão, e outra componente gigante e conexa.
 
-A componente gigante diz-se *conexa* uma vez que existe um caminho entre qualquer par de nodos.
+A componente gigante diz-se *conexa* uma vez que existe um caminho entre qualquer par de
+nodos.
 
 
 ```r
@@ -398,22 +425,22 @@ transitivity(graph2, type = "average")
 # Average clustering coefficient -> 0.2539683
 ```
 
-O Coeficiente de clustering também é bem menor que 1, o que indica que não existem relações próximas entre todos os nodos.
-
-
+O Coeficiente de *clustering* também é bem menor que 1, o que indica que não existem
+relações próximas entre todos os nodos.
 
 # Q3.
 
-> Determine para cada uma das redes as medidas de centralidade e o parâmetro de heterogeneidade. Interprete os valores obtidos. 
+> Determine para cada uma das redes as medidas de centralidade e o parâmetro de
+> heterogeneidade. Interprete os valores obtidos.
 >
-> O que pode concluir quanto à existência de hubs? Quais serão os hubs, no caso de existirem? Justifique. 
+> O que pode concluir quanto à existência de *hubs*? Quais serão os *hubs*, no caso de
+> existirem? Justifique.
 >
 > Efetue a decomposição de core de cada uma das redes.
 >
 > Compare os resultados obtidos para as duas redes.
 >
 > Interprete os valores obtidos para a primeira rede, no contexto da sua natureza.
-
 
 ## Q3.1 - Determine para cada uma das redes as medidas de centralidade e o parâmetro de heterogeneidade. Interprete os valores obtidos.
 
@@ -435,10 +462,13 @@ O Coeficiente de clustering também é bem menor que 1, o que indica que não ex
 plot(graph1, vertex.size=15+degrees*5)
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-8-1.png" alt="Figura 3 - rede de Finais da Taça de Portugal assinalando grau"  />
+<p class="caption">Figura 3 - rede de Finais da Taça de Portugal assinalando grau</p>
+</div>
 
 ```r
-(df_taca <- data.frame(
+df_taca <- data.frame(
   Nodo=1:length(degree(graph1, mode="all")),
   Equipa=c(
           "Académica",
@@ -458,27 +488,32 @@ plot(graph1, vertex.size=15+degrees*5)
           "Vitória de Setúbal"
           ),
   Grau=degrees
-))
+)
+kable(df_taca, caption="Tabela 3 - Nodos da rede das finais da Taça de Portugal indicando o grau")
 ```
 
-```
-##    Nodo               Equipa Grau
-## 1     1            Académica    1
-## 2     2           Belenenses    1
-## 3     3              Benfica    5
-## 4     4                Braga    3
-## 5     5               Chaves    1
-## 6     6  Desportivo das Aves    1
-## 7     7              Leixões    1
-## 8     8             Marítimo    1
-## 9     9    Paços de Ferreira    1
-## 10   10                Porto    9
-## 11   11              Rio Ave    1
-## 12   12          Sporting CP    6
-## 13   13      União de Leiria    1
-## 14   14 Vitória de Guimarães    2
-## 15   15   Vitória de Setúbal    2
-```
+
+
+Table: Tabela 3 - Nodos da rede das finais da Taça de Portugal indicando o grau
+
+| Nodo|Equipa               | Grau|
+|----:|:--------------------|----:|
+|    1|Académica            |    1|
+|    2|Belenenses           |    1|
+|    3|Benfica              |    5|
+|    4|Braga                |    3|
+|    5|Chaves               |    1|
+|    6|Desportivo das Aves  |    1|
+|    7|Leixões              |    1|
+|    8|Marítimo             |    1|
+|    9|Paços de Ferreira    |    1|
+|   10|Porto                |    9|
+|   11|Rio Ave              |    1|
+|   12|Sporting CP          |    6|
+|   13|União de Leiria      |    1|
+|   14|Vitória de Guimarães |    2|
+|   15|Vitória de Setúbal   |    2|
+
 
 ```r
 # análise gráfica das frequências de cada nó:
@@ -489,31 +524,32 @@ barplot(prop.table(table(df_taca$Grau)), xlab="Grau", ylab="Frequência Relativa
         ylim=c(0,1), xlim=c(0,10), main="Distribuição de Centralidade II")
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-8-2.png)<!-- -->
-
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-9-1.png" alt="Figura 4 - Distribuição de centralidade da rede de Finais da Taça de Portugal"  />
+<p class="caption">Figura 4 - Distribuição de centralidade da rede de Finais da Taça de Portugal</p>
+</div>
 
 
 ```r
 # 2. Proximidade e Centralidade de Proximidade
 
 #cálculo da Proximidade de cada um dos nodos aos restantes e guardamos na tabela df_taca:
-df_taca$Proximidade <- closeness(graph1, mode="all", weights=NA) 
+df_taca$Proximidade <- round(closeness(graph1, mode="all", weights=NA), 3)
 
 # centralidade de proximidade normalizada
-(df_taca$Centralidade_de_Proximidade <- centr_clo(graph1, mode="all", normalized=T)$res)
+(df_taca$Centralidade_de_Proximidade <- round(centr_clo(graph1, mode="all", normalized=T)$res, 3))
 ```
 
 ```
-##  [1] 0.3888889 0.3888889 0.5185185 0.5600000 0.4375000 0.3888889 0.3888889 0.4375000
-##  [9] 0.4375000 0.7368421 0.3500000 0.6086957 0.4375000 0.4666667 0.4666667
+##  [1] 0.389 0.389 0.519 0.560 0.438 0.389 0.389 0.438 0.438 0.737 0.350 0.609 0.438 0.467
+## [15] 0.467
 ```
-
 
 
 ```r
 # 3. Intermediação e Centralidade de Intermediação
 #intermediação de ligações:
-intermediacao_ligacoes <- edge_betweenness(graph1, directed=F, weights=NA)
+intermediacao_ligacoes <- round(edge_betweenness(graph1, directed=F, weights=NA),3)
 cat("Intermediação de Ligações: ", intermediacao_ligacoes)
 ```
 
@@ -523,14 +559,13 @@ cat("Intermediação de Ligações: ", intermediacao_ligacoes)
 
 ```r
 # centralidade de intermediação de nodos
-df_taca$Centralidade_de_Intermediacao <- betweenness(graph1, directed=F, normalized=T)
+df_taca$Centralidade_de_Intermediacao <- round(betweenness(graph1, directed=F, normalized=T), 3)
 cat("Centralidade de Intermediação Normalizada: ", df_taca$Centralidade_de_Intermediacao)
 ```
 
 ```
-## Centralidade de Intermediação Normalizada:  0 0 0.1593407 0.05494505 0 0 0 0 0 0.6868132 0 0.5054945 0 0 0
+## Centralidade de Intermediação Normalizada:  0 0 0.159 0.055 0 0 0 0 0 0.687 0 0.505 0 0 0
 ```
-
 
 
 ```r
@@ -543,38 +578,58 @@ cat("Centralidade de Intermediação Normalizada: ", df_taca$Centralidade_de_Int
 ## [1] 1.944444
 ```
 
+
 ```r
-kable(df_taca)
+kable(df_taca, caption = "Tabela 4 - Finais da Taça de Portugal - Nodos da rede com graus e medidas de centralidade")
 ```
 
 
 
+Table: Tabela 4 - Finais da Taça de Portugal - Nodos da rede com graus e medidas de centralidade
+
 | Nodo|Equipa               | Grau| Proximidade| Centralidade_de_Proximidade| Centralidade_de_Intermediacao|
 |----:|:--------------------|----:|-----------:|---------------------------:|-----------------------------:|
-|    1|Académica            |    1|   0.0277778|                   0.3888889|                     0.0000000|
-|    2|Belenenses           |    1|   0.0277778|                   0.3888889|                     0.0000000|
-|    3|Benfica              |    5|   0.0370370|                   0.5185185|                     0.1593407|
-|    4|Braga                |    3|   0.0400000|                   0.5600000|                     0.0549451|
-|    5|Chaves               |    1|   0.0312500|                   0.4375000|                     0.0000000|
-|    6|Desportivo das Aves  |    1|   0.0277778|                   0.3888889|                     0.0000000|
-|    7|Leixões              |    1|   0.0277778|                   0.3888889|                     0.0000000|
-|    8|Marítimo             |    1|   0.0312500|                   0.4375000|                     0.0000000|
-|    9|Paços de Ferreira    |    1|   0.0312500|                   0.4375000|                     0.0000000|
-|   10|Porto                |    9|   0.0526316|                   0.7368421|                     0.6868132|
-|   11|Rio Ave              |    1|   0.0250000|                   0.3500000|                     0.0000000|
-|   12|Sporting CP          |    6|   0.0434783|                   0.6086957|                     0.5054945|
-|   13|União de Leiria      |    1|   0.0312500|                   0.4375000|                     0.0000000|
-|   14|Vitória de Guimarães |    2|   0.0333333|                   0.4666667|                     0.0000000|
-|   15|Vitória de Setúbal   |    2|   0.0333333|                   0.4666667|                     0.0000000|
+|    1|Académica            |    1|       0.028|                       0.389|                         0.000|
+|    2|Belenenses           |    1|       0.028|                       0.389|                         0.000|
+|    3|Benfica              |    5|       0.037|                       0.519|                         0.159|
+|    4|Braga                |    3|       0.040|                       0.560|                         0.055|
+|    5|Chaves               |    1|       0.031|                       0.438|                         0.000|
+|    6|Desportivo das Aves  |    1|       0.028|                       0.389|                         0.000|
+|    7|Leixões              |    1|       0.028|                       0.389|                         0.000|
+|    8|Marítimo             |    1|       0.031|                       0.438|                         0.000|
+|    9|Paços de Ferreira    |    1|       0.031|                       0.438|                         0.000|
+|   10|Porto                |    9|       0.053|                       0.737|                         0.687|
+|   11|Rio Ave              |    1|       0.025|                       0.350|                         0.000|
+|   12|Sporting CP          |    6|       0.043|                       0.609|                         0.505|
+|   13|União de Leiria      |    1|       0.031|                       0.438|                         0.000|
+|   14|Vitória de Guimarães |    2|       0.033|                       0.467|                         0.000|
+|   15|Vitória de Setúbal   |    2|       0.033|                       0.467|                         0.000|
 
-No que diz respeito à distribuição da centralidade dos nodos desta rede, é possível perceber que a maioria destes tem como grau o valor um, ou seja, a maioria das equipas (60% delas) só participou uma vez numa final da Taça no período em análise - têm somente uma ligação. Depois, temos duas equipas que já tem duas participações e finalmente quatro que têm mais que três participações no período: Braga (3), Benfica (5), Sporting CP (6) e Porto (9).
+No que diz respeito à distribuição da centralidade dos nodos desta rede, é possível
+perceber que a maioria destes tem como grau o valor um, ou seja, a maioria das equipas
+(60% delas) só participou uma vez numa final da Taça no período em análise - têm somente
+uma ligação. Depois, temos duas equipas que já tem duas participações e finalmente quatro
+que têm mais que três participações no período: Braga (3), Benfica (5), Sporting CP (6) e
+Porto (9).
 
-Se olharmos para a medida de centralidade de proximidade, o que verificamos é que quanto maior o grau de dado nodo, maior o valor para a centralidade de proximidade. Estando perante valores normalizados, quanto mais próximo de 1 mais próximo determinado nodo está de ser "o" nodo central (a centralidade de proximidade será máxima no caso de um grafo do tipo estrela (https://igraph.org/r/doc/centralize.html)) - o equivalente a termos uma mesma equipa em participar em todas as finais. Significa isto que aquelas equipas já identificadas anteriormente como tendo os graus mais elevados, são também elas cujos nodos se encontram mais próximos de todos os restantes (Porto com 0.737, Sporting CP com 0.609, Braga com 0.56, e Benfica com 0.518). 
+Se olharmos para a medida de centralidade de proximidade, o que verificamos é que quanto
+maior o grau de dado nodo, maior o valor para a centralidade de proximidade. Estando
+perante valores normalizados, quanto mais próximo de 1 mais próximo determinado nodo está
+de ser "o" nodo central (a centralidade de proximidade será máxima no caso de um grafo do
+tipo estrela (<https://igraph.org/r/doc/centralize.html>)) - o equivalente a termos uma
+mesma equipa em participar em todas as finais. Significa isto que aquelas equipas já
+identificadas anteriormente como tendo os graus mais elevados, são também elas cujos nodos
+se encontram mais próximos de todos os restantes (Porto com 0.737, Sporting CP com 0.609,
+Braga com 0.56, e Benfica com 0.518).
 
-As medidas de intermediação, também referentes a centralidade, dizem-nos que somente há quatro equipas ou nodos em que passam caminhos mais curtos (*shortest path*): Braga com 5.5% dos caminhos mais curtos da rede a passarem pelo seu nodo; Benfica com 15.9%; Sporting CP com 50.5%, e Porto com 68.7%.
+As medidas de intermediação, também referentes a centralidade, dizem-nos que somente há
+quatro equipas ou nodos em que passam caminhos mais curtos (*shortest path*): Braga com
+5.5% dos caminhos mais curtos da rede a passarem pelo seu nodo; Benfica com 15.9%;
+Sporting CP com 50.5%, e Porto com 68.7%.
 
-Finalmente, a análise da heterogeneidade indica-nos um valor de 1.94. Sendo um valor superior a 1, sugere a existência de alguma heterogeneidade nos dados, ou seja, a existência de nodos com graus diferentes dos restantes.
-
+Finalmente, a análise da heterogeneidade indica-nos um valor de 1.94. Sendo um valor
+superior a 1, sugere a existência de alguma heterogeneidade nos dados, ou seja, a
+existência de nodos com graus diferentes dos restantes.
 
 ### Rede 2 - Rede Aleatória
 
@@ -594,33 +649,41 @@ Finalmente, a análise da heterogeneidade indica-nos um valor de 1.94. Sendo um 
 plot(graph2, vertex.size=16+degrees2*5)
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-14-1.png" alt="Figura 5 - rede aleatória assinalando grau"  />
+<p class="caption">Figura 5 - rede aleatória assinalando grau</p>
+</div>
 
 ```r
-(df_rede_aleatoria <- data.frame(
+df_rede_aleatoria <- data.frame(
   Nodo=1:length(degree(graph2, mode="all")),
   Grau=degrees2
-))
+)
+kable(df_rede_aleatoria, caption = "Tabela 5 - rede aleatória - Nodos da rede com graus")
 ```
 
-```
-##    Nodo Grau
-## 1     1    2
-## 2     2    7
-## 3     3    3
-## 4     4    3
-## 5     5    3
-## 6     6    1
-## 7     7    3
-## 8     8    2
-## 9     9    2
-## 10   10    2
-## 11   11    2
-## 12   12    1
-## 13   13    3
-## 14   14    0
-## 15   15    2
-```
+
+
+Table: Tabela 5 - rede aleatória - Nodos da rede com graus
+
+| Nodo| Grau|
+|----:|----:|
+|    1|    2|
+|    2|    7|
+|    3|    3|
+|    4|    3|
+|    5|    3|
+|    6|    1|
+|    7|    3|
+|    8|    2|
+|    9|    2|
+|   10|    2|
+|   11|    2|
+|   12|    1|
+|   13|    3|
+|   14|    0|
+|   15|    2|
+
 
 ```r
 # análise gráfica das frequências de cada nó:
@@ -629,8 +692,10 @@ barplot(table(df_rede_aleatoria$Grau), xlab="Grau", ylab="Frequência Absoluta",
 barplot(prop.table(table(df_rede_aleatoria$Grau)), xlab="Grau", ylab="Frequência Relativa", ylim=c(0,1), xlim=c(0,10), main="Distribuição de Centralidade II")
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-13-2.png)<!-- -->
-
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-15-1.png" alt="Figura 6 - rede aleatória medidas de centralidade"  />
+<p class="caption">Figura 6 - rede aleatória medidas de centralidade</p>
+</div>
 
 
 ```r
@@ -664,7 +729,6 @@ df_rede_aleatoria$Proximidade <- closeness(graph2, mode="all", weights=NA)
 ```
 
 
-
 ```r
 # 3. Intermediação e Centralidade de Intermediação
 #intermediação de ligações:
@@ -678,16 +742,14 @@ cat("Intermediação de Ligações: ", intermediacao_ligacoes2)
 
 ```r
 # centralidade de intermediação de nodos
-(df_rede_aleatoria$Centralidade_de_Intermediacao <- betweenness(graph2, 
-                                                                directed=F, normalized=T))
+(df_rede_aleatoria$Centralidade_de_Intermediacao <- round(betweenness(graph2, 
+                                                                directed=F, normalized=T), 3))
 ```
 
 ```
-##  [1] 0.000000000 0.637362637 0.137362637 0.032967033 0.181318681 0.000000000 0.148351648
-##  [8] 0.005494505 0.000000000 0.060439560 0.098901099 0.000000000 0.120879121 0.000000000
-## [15] 0.060439560
+##  [1] 0.000 0.637 0.137 0.033 0.181 0.000 0.148 0.005 0.000 0.060 0.099 0.000 0.121 0.000
+## [15] 0.060
 ```
-
 
 
 ```r
@@ -699,36 +761,65 @@ cat("Intermediação de Ligações: ", intermediacao_ligacoes2)
 ```
 ## [1] 1.388889
 ```
-Analisando os indicadores de centralidade da rede aleatória, a primeira nota que fazemos é que 11 dos seus 15 nodos têm grau 2 ou grau 3 (60% e 33.33% dos nodos, respectivamente). A representação gráfica da rede destaca claramente o nodo de grau 7 numa posição central do grafo. Este nodo é aquele que apresenta o valor de centralidade mais elevado (0.40) e também o valor mais elevado para a centralidade de intermediação (0.637), significando isto que este nodo é o mais próximo de todos os restantes e também que quase 64% dos caminhos mais curtos da rede atravessam este nodo. Dos restantes nodos, aqueles que apresentam valores mais elevados para a centralidade de proximidade e de intermediação são alguns de grau 3 (nodos 3, 5 e 7); contudo, os seus valores parecem mais próximos daqueles que os nodos de menor grau observam do que aqueles que temos no nodo de grau 7.
 
-Sobre a heterogeneidade da rede, obtemos um valor de 1.38. Apesar de este valor sugerir alguma diferenciação nos dados, por ser superior a 1, esta diferenciação pode não ser muito relevante (1.38 não é muito maior que 1).
+Analisando os indicadores de centralidade da rede aleatória, a primeira nota que fazemos é
+que 11 dos seus 15 nodos têm grau 2 ou grau 3 (60% e 33.33% dos nodos, respectivamente). A
+representação gráfica da rede destaca claramente o nodo de grau 7 numa posição central do
+grafo. Este nodo é aquele que apresenta o valor de centralidade mais elevado (0.40) e
+também o valor mais elevado para a centralidade de intermediação (0.637), significando
+isto que este nodo é o mais próximo de todos os restantes e também que quase 64% dos
+caminhos mais curtos da rede atravessam este nodo. Dos restantes nodos, aqueles que
+apresentam valores mais elevados para a centralidade de proximidade e de intermediação são
+alguns de grau 3 (nodos 3, 5 e 7); contudo, os seus valores parecem mais próximos daqueles
+que os nodos de menor grau observam do que aqueles que temos no nodo de grau 7.
 
+Sobre a heterogeneidade da rede, obtemos um valor de 1.38. Apesar de este valor sugerir
+alguma diferenciação nos dados, por ser superior a 1, esta diferenciação pode não ser
+muito relevante (1.38 não é muito maior que 1).
 
-
-## Q3.2 - O que pode concluir quanto à existência de hubs? Quais serão os hubs, no caso de existirem? Justifique.
+## Q3.2 - O que pode concluir quanto à existência de *hubs*? Quais serão os *hubs*, no caso de existirem? Justifique.
 
 ### Rede 1 - Finais da Taça de Portugal
 
-Com base na informação obtida, podemos concluir que existem *hubs* no grafo que representa as finais da Taça de Portugal: verificamos que três equipas se destacam no número de participações das restantes (Porto, Sporting CP, Benfica; com 9, 6, e 5 participações, respectivamente, contra uma participação na maioria das restantes); quatro das equipas (Porto, Sporting CP, Benfica, Braga) têm valores razoáveis de centralidade de proximidade, o que significa que os seus nodos se encontram próximos dos restantes, e por consequência centrais aos restantes nodos; finalmente, os valores da centralidade de intermediação mostram que os caminhos mais curtos da rede passam em somente quatro nodos dos quinze - Porto, Sporting CP, Benfica e Braga -, embora com representações distintas. Verificamos que o parâmetro de heterogeneidade, sendo superior a 1, também nos dá sugestão de alguma diferenciação da representação de informação pelos nodos, ou seja, nodos mais centrais que outros.
+Com base na informação obtida, podemos concluir que existem *hubs* no grafo que representa
+as finais da Taça de Portugal: verificamos que três equipas se destacam no número de
+participações das restantes (Porto, Sporting CP, Benfica; com 9, 6, e 5 participações,
+respectivamente, contra uma participação na maioria das restantes); quatro das equipas
+(Porto, Sporting CP, Benfica, Braga) têm valores razoáveis de centralidade de proximidade,
+o que significa que os seus nodos se encontram próximos dos restantes, e por consequência
+centrais aos restantes nodos; finalmente, os valores da centralidade de intermediação
+mostram que os caminhos mais curtos da rede passam em somente quatro nodos dos quinze -
+Porto, Sporting CP, Benfica e Braga -, embora com representações distintas. Verificamos
+que o parâmetro de heterogeneidade, sendo superior a 1, também nos dá sugestão de alguma
+diferenciação da representação de informação pelos nodos, ou seja, nodos mais centrais que
+outros.
 
-Os nodos que se destacam nesta análise acabam por ser os referentes à equipa do Porto e do Sporting CP, cada um deles a obter elevados valores para as medidas de centralidade e a serem os dois nodos com maior grau. São estas as equipas que mais jogaram finais da Taça de Portugal no período referido. Com certeza, estes são os principais *hubs* do grafo. Consoante o "nível de inclusão" pretendido, os outros dois candidatos a integrarem o conjunto de *hubs* serão também os nodos do Benfica e do Braga.
-
+Os nodos que se destacam nesta análise acabam por ser os referentes à equipa do Porto e do
+Sporting CP, cada um deles a obter elevados valores para as medidas de centralidade e a
+serem os dois nodos com maior grau. São estas as equipas que mais jogaram finais da Taça
+de Portugal no período referido. Com certeza, estes são os principais *hubs* do grafo.
+Consoante o "nível de inclusão" pretendido, os outros dois candidatos a integrarem o
+conjunto de *hubs* serão também os nodos do Benfica e do Braga.
 
 ### Rede 2 - Rede Aleatória
 
-Na rede aleatória, parece-nos existir um nodo que se destaca claramente dos outros e que se apresenta como único candidato a ser caracterizado como *hub*. Isto porque este nodo (nodo 2) é um nodo que se destaca dos restantes pelo seu grau (grau 7, contra um máximo de grau 3 dos restantes nodos), pela sua centralidade de proximidade normalizada (é o nodo mais próximo em termos de distância de qualquer um dos restantes), e por fim também pela sua centralidade de intermediação: é claramente o nodo pelo qual passam mais caminhos mais curtos de toda a rede - cerca de 64%.
-
-
+Na rede aleatória, parece-nos existir um nodo que se destaca claramente dos outros e que
+se apresenta como único candidato a ser caracterizado como *hub*. Isto porque este nodo
+(nodo 2) é um nodo que se destaca dos restantes pelo seu grau (grau 7, contra um máximo de
+grau 3 dos restantes nodos), pela sua centralidade de proximidade normalizada (é o nodo
+mais próximo em termos de distância de qualquer um dos restantes), e por fim também pela
+sua centralidade de intermediação: é claramente o nodo pelo qual passam mais caminhos mais
+curtos de toda a rede - cerca de 64%.
 
 ## Q3.3 - Efetue a decomposição de core de cada uma das redes. Compare os resultados obtidos para as duas redes.
 
-
 ### Rede 1 - Finais da Taça de Portugal
+
 
 ```r
 # 6. Decomposição de Core
 
-(df_taca$K_Core_Decomposition <- coreness(graph1, mode="all"))
+(df_taca$K_Core_Decomposition <- round(coreness(graph1, mode="all"),3))
 ```
 
 ```
@@ -740,35 +831,43 @@ plot(graph1, vertex.size = 15+df_taca$K_Core_Decomposition*10,
      vertex.label=df_taca$K_Core_Decomposition)
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-19-1.png" alt="Figura 7 - rede de Finais da Taça de Portugal assinalando decomposição de core"  />
+<p class="caption">Figura 7 - rede de Finais da Taça de Portugal assinalando decomposição de core</p>
+</div>
 
 ```r
-kable(df_taca)
+kable(df_taca, caption = "Tabela 6 - Finais da Taça de Portugal - Nodos da rede com decomposição de core")
 ```
 
 
 
+Table: Tabela 6 - Finais da Taça de Portugal - Nodos da rede com decomposição de core
+
 | Nodo|Equipa               | Grau| Proximidade| Centralidade_de_Proximidade| Centralidade_de_Intermediacao| K_Core_Decomposition|
 |----:|:--------------------|----:|-----------:|---------------------------:|-----------------------------:|--------------------:|
-|    1|Académica            |    1|   0.0277778|                   0.3888889|                     0.0000000|                    1|
-|    2|Belenenses           |    1|   0.0277778|                   0.3888889|                     0.0000000|                    1|
-|    3|Benfica              |    5|   0.0370370|                   0.5185185|                     0.1593407|                    2|
-|    4|Braga                |    3|   0.0400000|                   0.5600000|                     0.0549451|                    2|
-|    5|Chaves               |    1|   0.0312500|                   0.4375000|                     0.0000000|                    1|
-|    6|Desportivo das Aves  |    1|   0.0277778|                   0.3888889|                     0.0000000|                    1|
-|    7|Leixões              |    1|   0.0277778|                   0.3888889|                     0.0000000|                    1|
-|    8|Marítimo             |    1|   0.0312500|                   0.4375000|                     0.0000000|                    1|
-|    9|Paços de Ferreira    |    1|   0.0312500|                   0.4375000|                     0.0000000|                    1|
-|   10|Porto                |    9|   0.0526316|                   0.7368421|                     0.6868132|                    2|
-|   11|Rio Ave              |    1|   0.0250000|                   0.3500000|                     0.0000000|                    1|
-|   12|Sporting CP          |    6|   0.0434783|                   0.6086957|                     0.5054945|                    2|
-|   13|União de Leiria      |    1|   0.0312500|                   0.4375000|                     0.0000000|                    1|
-|   14|Vitória de Guimarães |    2|   0.0333333|                   0.4666667|                     0.0000000|                    2|
-|   15|Vitória de Setúbal   |    2|   0.0333333|                   0.4666667|                     0.0000000|                    2|
+|    1|Académica            |    1|       0.028|                       0.389|                         0.000|                    1|
+|    2|Belenenses           |    1|       0.028|                       0.389|                         0.000|                    1|
+|    3|Benfica              |    5|       0.037|                       0.519|                         0.159|                    2|
+|    4|Braga                |    3|       0.040|                       0.560|                         0.055|                    2|
+|    5|Chaves               |    1|       0.031|                       0.438|                         0.000|                    1|
+|    6|Desportivo das Aves  |    1|       0.028|                       0.389|                         0.000|                    1|
+|    7|Leixões              |    1|       0.028|                       0.389|                         0.000|                    1|
+|    8|Marítimo             |    1|       0.031|                       0.438|                         0.000|                    1|
+|    9|Paços de Ferreira    |    1|       0.031|                       0.438|                         0.000|                    1|
+|   10|Porto                |    9|       0.053|                       0.737|                         0.687|                    2|
+|   11|Rio Ave              |    1|       0.025|                       0.350|                         0.000|                    1|
+|   12|Sporting CP          |    6|       0.043|                       0.609|                         0.505|                    2|
+|   13|União de Leiria      |    1|       0.031|                       0.438|                         0.000|                    1|
+|   14|Vitória de Guimarães |    2|       0.033|                       0.467|                         0.000|                    2|
+|   15|Vitória de Setúbal   |    2|       0.033|                       0.467|                         0.000|                    2|
 
-Neste caso, observamos que a decomposição da rede gera conchas com *coreness* ou de de 1 ou 2: todos aqueles nodos que integram o core com *k* mais elevado são aqueles cujo grau é igual ou superior a 2 - no caso concreto, estão aqui as equipas que jogaram pelo menos 2 finais da Taça de Portugal.
-Além disto, verifica-se que 6 dos 15 nodos integram o core com o *k* mais elevado e 9 em 15 fazem parte de uma concha com o *k* mínimo. Ou seja, somente 40% dos nodos formam a concha de *coreness* superior.
-
+Neste caso, observamos que a decomposição da rede gera conchas com *coreness* ou de de 1
+ou 2: todos aqueles nodos que integram o core com *k* mais elevado são aqueles cujo grau é
+igual ou superior a 2 - no caso concreto, estão aqui as equipas que jogaram pelo menos 2
+finais da Taça de Portugal. Além disto, verifica-se que 6 dos 15 nodos integram o core com
+o *k* mais elevado e 9 em 15 fazem parte de uma concha com o *k* mínimo. Ou seja, somente
+40% dos nodos formam a concha de *coreness* superior.
 
 ### Rede 2 - Rede Aleatória
 
@@ -776,7 +875,7 @@ Além disto, verifica-se que 6 dos 15 nodos integram o core com o *k* mais eleva
 ```r
 # 6. Decomposição de Core
 
-(df_rede_aleatoria$K_Core_Decomposition <- coreness(graph2, mode="all"))
+(df_rede_aleatoria$K_Core_Decomposition <- round(coreness(graph2, mode="all"), 3))
 ```
 
 ```
@@ -788,32 +887,45 @@ plot(graph2, vertex.size = 15+df_rede_aleatoria$K_Core_Decomposition*10,
      vertex.label = df_rede_aleatoria$K_Core_Decomposition)
 ```
 
-![](AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+<div class="figure" style="text-align: center">
+<img src="AR-TrabalhoGrupo1-Catarina-Joao-Joel_files/figure-html/unnamed-chunk-20-1.png" alt="Figura 8 - rede aleatória assinalando decomposição de core"  />
+<p class="caption">Figura 8 - rede aleatória assinalando decomposição de core</p>
+</div>
 
 ```r
-kable(df_rede_aleatoria)
+kable(df_rede_aleatoria, caption = "Tabela 7 - rede aleatória - Nodos da rede com decomposição de core")
 ```
 
 
 
+Table: Tabela 7 - rede aleatória - Nodos da rede com decomposição de core
+
 | Nodo| Grau| Proximidade| Centralidade_de_Proximidade| Centralidade_de_Intermediacao| K_Core_Decomposition|
 |----:|----:|-----------:|---------------------------:|-----------------------------:|--------------------:|
-|    1|    2|   0.0227273|                   0.3181818|                     0.0000000|                    2|
-|    2|    7|   0.0285714|                   0.4000000|                     0.6373626|                    2|
-|    3|    3|   0.0200000|                   0.2800000|                     0.1373626|                    2|
-|    4|    3|   0.0200000|                   0.2800000|                     0.0329670|                    2|
-|    5|    3|   0.0238095|                   0.3333333|                     0.1813187|                    2|
-|    6|    1|   0.0161290|                   0.2258065|                     0.0000000|                    1|
-|    7|    3|   0.0232558|                   0.3255814|                     0.1483516|                    2|
-|    8|    2|   0.0181818|                   0.2545455|                     0.0054945|                    2|
-|    9|    2|   0.0192308|                   0.2692308|                     0.0000000|                    2|
-|   10|    2|   0.0222222|                   0.3111111|                     0.0604396|                    2|
-|   11|    2|   0.0232558|                   0.3255814|                     0.0989011|                    2|
-|   12|    1|   0.0185185|                   0.2592593|                     0.0000000|                    1|
-|   13|    3|   0.0238095|                   0.3333333|                     0.1208791|                    2|
-|   14|    0|   0.0047619|                   0.0666667|                     0.0000000|                    0|
-|   15|    2|   0.0222222|                   0.3111111|                     0.0604396|                    2|
+|    1|    2|   0.0227273|                   0.3181818|                         0.000|                    2|
+|    2|    7|   0.0285714|                   0.4000000|                         0.637|                    2|
+|    3|    3|   0.0200000|                   0.2800000|                         0.137|                    2|
+|    4|    3|   0.0200000|                   0.2800000|                         0.033|                    2|
+|    5|    3|   0.0238095|                   0.3333333|                         0.181|                    2|
+|    6|    1|   0.0161290|                   0.2258065|                         0.000|                    1|
+|    7|    3|   0.0232558|                   0.3255814|                         0.148|                    2|
+|    8|    2|   0.0181818|                   0.2545455|                         0.005|                    2|
+|    9|    2|   0.0192308|                   0.2692308|                         0.000|                    2|
+|   10|    2|   0.0222222|                   0.3111111|                         0.060|                    2|
+|   11|    2|   0.0232558|                   0.3255814|                         0.099|                    2|
+|   12|    1|   0.0185185|                   0.2592593|                         0.000|                    1|
+|   13|    3|   0.0238095|                   0.3333333|                         0.121|                    2|
+|   14|    0|   0.0047619|                   0.0666667|                         0.000|                    0|
+|   15|    2|   0.0222222|                   0.3111111|                         0.060|                    2|
 
-Nesta rede aleatória, verificamos que existem três níveis de *coreness*: 0, 1, 2. Isto porque sendo uma rede disconexa, o nodo isolado integra vai integrar somente a concha de *k* = 0.
-Aqui, como existem muitos nodos com grau igual ou superior a 2, significa que temos mais nodos a integrar a concha *k* = 2 que a proporção observada na rede da Taça de Portugal: na rede aleatória somente 3/15 nodos não integram a concha de *k* mais elevado, ou seja, temos 80% dos nodos a formarem o core de *k* superior.
-Esta análise permite-nos concluir que a centralidade pode ser considerada mais "difusa" nesta rede aleatória que na da Taça de Portugal, uma vez que a maior parte dos nodos fazem parte do *core* com grau mais elevado, e a medida de heterogeneidade é relativamente mais próxima de 1. Enquanto na primeira rede, temos nodos que se destacam na formação da concha de *k* superior, na segunda o menos comum é termos nodos a integrarem somente nodos de *k* inferiores.
+Nesta rede aleatória, verificamos que existem três níveis de *coreness*: 0, 1, 2. Isto
+porque sendo uma rede disconexa, o nodo isolado vai integrar somente a concha de *k* = 0.
+Aqui, como existem muitos nodos com grau igual ou superior a 2, significa que temos mais
+nodos a integrar a concha *k* = 2 que a proporção observada na rede da Taça de Portugal:
+na rede aleatória somente 3/15 nodos não integram a concha de *k* mais elevado, ou seja,
+temos 80% dos nodos a formarem o core de *k* superior. Esta análise permite-nos concluir
+que a centralidade pode ser considerada mais "difusa" nesta rede aleatória que na da Taça
+de Portugal, uma vez que a maior parte dos nodos fazem parte do *core* com grau mais
+elevado, e a medida de heterogeneidade é relativamente mais próxima de 1. Enquanto na
+primeira rede, temos nodos que se destacam na formação da concha de *k* superior, na
+segunda o menos comum é termos nodos a integrarem somente nodos de *k* inferiores.
